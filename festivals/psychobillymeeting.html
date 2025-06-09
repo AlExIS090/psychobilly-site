@@ -1,91 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Psychobilly Meeting</title>
-  <link rel="stylesheet" href="../styles.css" />
-  <script defer>
-    document.addEventListener("DOMContentLoaded", function () {
-      const nextDate = new Date("2026-07-01T17:00:00").getTime();
-      const countdown = document.getElementById("countdown");
-
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const diff = nextDate - now;
-
-        if (diff <= 0) {
-          countdown.textContent = "The event is live or has ended!";
-          return;
-        }
-
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        countdown.textContent = `Next edition in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-      }
-
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
-    });
-  </script>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="search-bar">
-      <input type="text" placeholder="Search..." />
+    <div class="header-left">
+      <select id="langSelect">
+        <option value="uk" selected>Українська</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <div class="header-right">
+      <a href="../register.html" class="btn small" data-text-uk="Реєстрація" data-text-en="Register">Реєстрація</a>
+      <a href="../login.html" class="btn small" data-text-uk="Вхід" data-text-en="Login">Вхід</a>
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../festivals.html">Festivals</a></li>
-        <li><a href="../bands.html">Bands</a></li>
-        <li><a href="../gallery.html">Gallery</a></li>
+        <li><a href="../index.html" data-text-uk="Головна" data-text-en="Home">Головна</a></li>
+        <li><a href="../festivals.html" data-text-uk="Фестивалі" data-text-en="Festivals">Фестивалі</a></li>
+        <li><a href="../bands.html" data-text-uk="Гурти" data-text-en="Bands">Гурти</a></li>
+        <li><a href="../gallery.html" data-text-uk="Галерея" data-text-en="Gallery">Галерея</a></li>
       </ul>
     </nav>
   </header>
-
-  <main class="center-content">
-    <h1>Psychobilly Meeting</h1>
-
-    <div class="festival-banner">
-      <img src="../images/psychobillymeeting.jfif" alt="Psychobilly Meeting Banner" style="width:100%; border-radius: 12px;">
-    </div>
-
-    <div id="countdown" style="margin: 20px 0; font-size: 20px; color: #ff0055;"></div>
-
-    <section class="festival-details">
-      <p><strong>Date:</strong> July 1–5, 2025</p>
-      <p><strong>Location:</strong> Pineda de Mar, Spain</p>
-      <p>
-        Psychobilly Meeting is one of the biggest and longest-running open-air festivals dedicated to the psychobilly and rockabilly scenes. It takes place every summer at the beach with a crazy international lineup, wild parties, tiki bars and unforgettable atmosphere.
-      </p>
-      <a href="https://psychobillymeeting.com/tickets" class="btn" target="_blank">Buy Tickets</a>
-    </section>
-
-    <section class="band-lineup" style="margin-top: 40px;">
-      <h2>Previous Headliners</h2>
-      <div class="band-list">
-        <a href="../bands/nekromantix.html" class="band-card">
-          <img src="../images/nekromantix-logo.jfif" alt="Nekromantix">
-          <p>Nekromantix</p>
-        </a>
-        <a href="../bands/madsin.html" class="band-card">
-          <img src="../images/mad-sin-logo.jpg" alt="Mad Sin">
-          <p>Mad Sin</p>
-        </a>
-        <a href="../bands/meteors.html" class="band-card">
-          <img src="../images/the-meteors-logo.jfif" alt="The Meteors">
-          <p>The Meteors</p>
-        </a>
-      </div>
-    </section>
+  <main class="detail-page">
+    <h1 data-text-uk="Psychobilly Meeting" data-text-en="Psychobilly Meeting">Psychobilly Meeting</h1>
+    <img src="../images/psychobillymeeting.jfif" alt="Psychobilly Meeting" class="detail-img">
+    <p data-text-uk="Щорічна зустріч фанатів психобіллі з усього світу." data-text-en="Annual gather of psychobilly fans worldwide.">
+      Щорічна зустріч фанатів психобіллі з усього світу.
+    </p>
   </main>
-
   <footer>
     <p>&copy; 2025 Psychobilly Festival Portal</p>
   </footer>
+  <script>
+    document.getElementById('langSelect').addEventListener('change', e => {
+      document.documentElement.lang = e.target.value;
+      document.querySelectorAll('[data-text-uk]').forEach(el => {
+        el.textContent = el.getAttribute('data-text-' + e.target.value);
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,10 +1,18 @@
-const searchInput = document.getElementById('searchInput');
-const bandItems = document.querySelectorAll('.band-item');
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.querySelector('input[type="text"]');
+  if (!input) return;
 
-searchInput.addEventListener('input', function () {
-  const query = searchInput.value.toLowerCase();
-  bandItems.forEach(function (item) {
-    const text = item.innerText.toLowerCase();
-    item.style.display = text.includes(query) ? '' : 'none';
+  input.addEventListener('input', () => {
+    const query = input.value.toLowerCase();
+
+    document.querySelectorAll('.festival-card').forEach(card => {
+      const title = card.querySelector('h2').textContent.toLowerCase();
+      card.style.display = title.includes(query) ? '' : 'none';
+    });
+
+    document.querySelectorAll('.band-card').forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      card.style.display = title.includes(query) ? '' : 'none';
+    });
   });
 });

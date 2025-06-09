@@ -5,35 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Psychobilly Festival Portal</title>
   <link rel="stylesheet" href="css/style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search...">
+    <div class="header-left">
+      <select id="langSelect">
+        <option value="uk" selected>Українська</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <div class="header-right">
+      <a href="register.html" class="btn small">Register</a>
+      <a href="login.html" class="btn small">Login</a>
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="festivals.html">Festivals</a></li>
-        <li><a href="bands.html">Bands</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html" data-text-uk="Головна" data-text-en="Home">Головна</a></li>
+        <li><a href="festivals.html" data-text-uk="Фестивалі" data-text-en="Festivals">Фестивалі</a></li>
+        <li><a href="bands.html" data-text-uk="Гурти" data-text-en="Bands">Гурти</a></li>
+        <li><a href="gallery.html" data-text-uk="Галерея" data-text-en="Gallery">Галерея</a></li>
       </ul>
     </nav>
   </header>
 
+  <main class="home-main">
+    <h1 data-text-uk="Ласкаво просимо!" data-text-en="Welcome!">Ласкаво просимо!</h1>
+    <p data-text-uk="Виберіть розділ зверху." data-text-en="Choose a section above.">
+      Виберіть розділ зверху.
+    </p>
 
-  <main>
-    <h1>Welcome to the Psychobilly Portal</h1>
-    <p>Use the menu above to explore festivals, bands, and our gallery.</p>
+    <div class="collage">
+      <img src="images/Colage1.jpg" alt="Collage 1">
+      <img src="images/Colage2.jpg" alt="Collage 2">
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Psychobilly Festival Portal</p>
   </footer>
 
-  <script src="css/js/search.js"></script>
+  <script src="js/search.js"></script>
+  <script>
+    const langSelect = document.getElementById('langSelect');
+    langSelect.addEventListener('change', () => {
+      document.documentElement.lang = langSelect.value;
+      document.querySelectorAll('[data-text-uk]').forEach(el => {
+        el.textContent = el.getAttribute(`data-text-${langSelect.value}`);
+      });
+    });
+  </script>
 </body>
 </html>
