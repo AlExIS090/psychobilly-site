@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Psychobilly Bands Catalog</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/search.js" defer></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Psychobilly Bands Catalog</h1>
-    <input type="text" id="searchInput" placeholder="Search bands by name...">
+  <header>
+    <h1>Psychobilly Bands</h1>
+    <p class="subtitle">Discover legendary and underground psychobilly bands</p>
+  </header>
 
-    <div class="band">
-  <img src="images/the-meteors-logo.jfif" alt="The Meteors Logo" class="band-logo">
-  <h2>The Meteors</h2>
-  <p>A pioneering UK psychobilly band formed in 1980, known for their horror-punk rockabilly style.</p>
-  <p>
-    <a href="https://open.spotify.com/artist/1pzT6PTUspLaWkW3PVP11S" target="_blank">Spotify</a> |
-    <a href="https://music.youtube.com/channel/UClVWe5g-ZxyfNUMfe3F5oHA" target="_blank">YouTube Music</a>
-  </p>
-  <div class="albums">
-    <h3>Albums</h3>
-    <div class="album">
-      <img src="images/the-meteors-album-1.jpg" alt="In Heaven" class="album-cover">
-      <p><strong>In Heaven</strong> (1981)</p>
+  <main>
+    <div class="band-grid">
+      <a href="bands/the-meteors.html" class="band-card">
+        <img src="images/the-meteors-logo.jfif" alt="The Meteors">
+        <h2>The Meteors</h2>
+      </a>
+
+      <a href="bands/nekromantix.html" class="band-card">
+        <img src="images/nekromantix-logo.jfif" alt="Nekromantix">
+        <h2>Nekromantix</h2>
+      </a>
+
+      <a href="bands/mad-sin.html" class="band-card">
+        <img src="images/mad-sin-logo.jpg" alt="Mad Sin">
+        <h2>Mad Sin</h2>
+      </a>
+
     </div>
-    <div class="album">
-      <img src="images/the-meteors-album-2.jpg" alt="Wreckin' Crew" class="album-cover">
-      <p><strong>Wreckin' Crew</strong> (1983)</p>
-    </div>
-  </div>
-</div>
+  </main>
 
-
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="festivals.html">Festivals & Releases</a>
-    </nav>
-  </div>
+  <footer>
+    <p>© 2025 Psychobilly Archives</p>
+  </footer>
 </body>
 </html>
