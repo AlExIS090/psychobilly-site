@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Psychobilly Festival Portal</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
-  <div class="search-bar">
-  <input type="text" id="searchInput" placeholder="Search...">
-</div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search...">
+    </div>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -24,56 +24,16 @@
     </nav>
   </header>
 
-  <main class="main-layout">
-    <aside class="sidebar-left">
-      <h2>Festivals</h2>
-      <ul>
-        <li><a href="festivals/mutant-rock-weekender.html">Mutant Rock Weekender</a></li>
-        <li><a href="festivals/psycho-billy-bash.html">Psycho Billy Bash</a></li>
-      </ul>
-    </aside>
 
-    <section class="center-content">
-      <h1>Bands</h1>
-<div class="band-list">
-  <a href="bands/meteors.html" class="band-card" data-name="The Meteors">
-    <img src="images/the-meteors-logo.jfif" alt="The Meteors">
-    <h3>The Meteors</h3>
-  </a>
-  <a href="bands/mad-sin.html" class="band-card" data-name="Mad Sin">
-    <img src="images/mad-sin-logo-1.jpg" alt="Mad Sin">
-    <h3>Mad Sin</h3>
-  </a>
-  <a href="bands/nekromantix.html" class="band-card" data-name="Nekromantix">
-    <img src="images/nekromantix-logo.jfif" alt="Nekromantix">
-    <h3>Nekromantix</h3>
-  </a>
-</div>
-
-    </section>
+  <main>
+    <h1>Welcome to the Psychobilly Portal</h1>
+    <p>Use the menu above to explore festivals, bands, and our gallery.</p>
   </main>
 
   <footer>
     <p>&copy; 2025 Psychobilly Festival Portal</p>
   </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('searchInput');
-    const bandCards = document.querySelectorAll('.band-card');
 
-    searchInput.addEventListener('input', function () {
-      const query = searchInput.value.toLowerCase();
-
-      bandCards.forEach(card => {
-        const bandName = card.dataset.name.toLowerCase();
-        if (bandName.includes(query)) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
+  <script src="css/js/search.js"></script>
 </body>
 </html>

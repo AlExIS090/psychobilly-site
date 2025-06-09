@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bands</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="search-bar">
+      <input type="text" id="searchInputBands" placeholder="Search bands..." />
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="festivals.html">Festivals</a></li>
+        <li><a href="bands.html">Bands</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Bands</h1>
+    <div class="band-list">
+      <div class="band-card" data-name="The Meteors">
+        <img src="images/the-meteors-logo.jfif" alt="The Meteors" />
+        <h3>The Meteors</h3>
+        <a href="bands/the-meteors.html" class="btn">More</a>
+      </div>
+      <div class="band-card" data-name="Mad Sin">
+        <img src="images/mad-sin-logo-1.jpg" alt="Mad Sin" />
+        <h3>Mad Sin</h3>
+        <a href="bands/mad-sin.html" class="btn">More</a>
+      </div>
+      <div class="band-card" data-name="Nekromantix">
+        <img src="images/nekromantix-logo.jfif" alt="Nekromantix" />
+        <h3>Nekromantix</h3>
+        <a href="bands/nekromantix.html" class="btn">More</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Psychobilly Festival Portal</p>
+  </footer>
+
+  <script>
+    document.getElementById('searchInputBands').addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      document.querySelectorAll('.band-card').forEach(card => {
+        card.style.display = card.dataset.name.toLowerCase().includes(query) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
