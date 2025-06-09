@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a href="index.html" class="btn small">← Back</a>
-  </header>
+  <header class="site-header">…</header>
 
   <main class="form-container">
-    <h1 data-text-uk="Вхід" data-text-en="Login">Вхід</h1>
-    <form action="#" method="post">
-      <label data-text-uk="Email" data-text-en="Email">Email</label>
-      <input type="email" name="email"
+    <h1 data-uk="Вхід" data-en="Login">Вхід</h1>
+    <form id="loginForm">
+      <label data-uk="Email" data-en="Email">Email</label>
+      <input type="email" name="email" required>
+      <label data-uk="Пароль" data-en="Password">Пароль</label>
+      <input type="password" name="password" required>
+      <button type="submit" class="btn" data-uk="Увійти" data-en="Login">Увійти</button>
+    </form>
+    <p id="loginMsg" class="form-message"></p>
+  </main>
+
+  <script src="js/lang.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const { email, password } = e.target;
+      const stored = localStorage.getItem('user:'+email.value);
+      if (stored) {
+        const u = JSON.parse(stored);
+        if (u.pass === password.value) {
+          document.getElementById('loginMsg').textContent = 
+            u.name + (document.documentElement.lang === 'uk'
+              ? ', ви увійшли успішно!'
+              : ', you have logged in!');
+          return;
+        }
+      }
+      document.getElementById('loginMsg').textContent =
+        document.documentElement.lang === 'uk'
+        ? 'Невірний email або пароль'
+        : 'Invalid email or password';
+    });
+  </script>
+</body>
+</html>

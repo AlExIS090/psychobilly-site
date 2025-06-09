@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a href="index.html" class="btn small">← Back</a>
-  </header>
+  <header class="site-header">…</header>
 
   <main class="form-container">
-    <h1 data-text-uk="Реєстрація" data-text-en="Register">Реєстрація</h1>
-    <form action="#" method="post">
-      <label data-text-uk="Ім’я" data-text-en="Name">Ім’я</label>
+    <h1 data-uk="Реєстрація" data-en="Register">Реєстрація</h1>
+    <form id="regForm">
+      <label data-uk="Ім’я" data-en="Name">Ім’я</label>
       <input type="text" name="name" required>
-      <label data-text-uk="Email" data-text-en="Email">Email</label>
+      <label data-uk="Email" data-en="Email">Email</label>
       <input type="email" name="email" required>
-      <label data-text-uk="Пароль" data-text-en="Password">Пароль</label>
+      <label data-uk="Пароль" data-en="Password">Пароль</label>
       <input type="password" name="password" required>
-      <button type="submit" class="btn">Зареєструватися</button>
+      <button type="submit" class="btn" data-uk="Зареєструватися" data-en="Register">Зареєструватися</button>
     </form>
+    <p id="regMsg" class="form-message"></p> 
   </main>
+
+  <script src="js/lang.js"></script>
+  <script>
+    document.getElementById('regForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const fm = e.target;
+      const user = { name: fm.name.value, email: fm.email.value, pass: fm.password.value };
+      localStorage.setItem('user:'+user.email, JSON.stringify(user));
+      document.getElementById('regMsg').textContent = 
+        fm.querySelector('button').getAttribute('data-uk') === 'Зареєструватися'
+        ? 'Реєстрація пройшла успішно!'
+        : 'Registration successful!';
+      fm.reset();
+    });
+  </script>
 </body>
 </html>

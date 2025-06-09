@@ -266,3 +266,15 @@ footer {
   border-radius: 12px;
   margin-bottom: 20px;
 }
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.gallery-grid .uniform {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
