@@ -1,63 +1,55 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #111;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #222;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 3px solid crimson;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin: 0;
-}
-
-.subtitle {
-  color: #aaa;
-  font-style: italic;
-  margin-top: 10px;
-}
-
-.band-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.band-card {
-  background-color: #1a1a1a;
-  border-radius: 12px;
-  text-align: center;
-  padding: 15px;
-  color: #fff;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid #333;
-}
-
-.band-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px crimson;
-}
-
-.band-card img {
-  max-width: 100%;
-  height: auto;
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
   border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.events {
+  background: #111;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 12px;
+}
+
+.events h2 {
+  color: #f50;
   margin-bottom: 10px;
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
+.events ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.events li {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #ddd;
+}
+.back-button {
+  display: inline-block;
   background-color: #222;
-  font-size: 0.9em;
-  color: #888;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #444;
+}
+.band-page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.band-info {
+  max-width: 600px;
+  text-align: center;
 }
