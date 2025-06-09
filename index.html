@@ -12,7 +12,18 @@
     <p class="subtitle">Discover legendary and underground psychobilly bands</p>
   </header>
 
+  <section class="events">
+    <h2>Upcoming Events & Festivals</h2>
+    <ul>
+      <li><strong>Psychobilly Earthquake Festival</strong> – July 20, 2025 – Berlin, Germany</li>
+      <li><strong>Rockin' Bones Fest</strong> – August 15, 2025 – Los Angeles, USA</li>
+      <li><strong>Mutant Rock Weekender</strong> – September 10, 2025 – London, UK</li>
+    </ul>
+  </section>
+
   <main>
+    <input type="text" id="searchInput" placeholder="Search bands..." />
+
     <div class="band-grid">
       <a href="bands/the-meteors.html" class="band-card">
         <img src="images/the-meteors-logo.jfif" alt="The Meteors">
@@ -28,12 +39,24 @@
         <img src="images/mad-sin-logo.jpg" alt="Mad Sin">
         <h2>Mad Sin</h2>
       </a>
-
     </div>
   </main>
 
   <footer>
     <p>© 2025 Psychobilly Archives</p>
   </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const bandCards = document.querySelectorAll('.band-card');
+
+    searchInput.addEventListener('input', () => {
+      const filter = searchInput.value.toLowerCase();
+      bandCards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
