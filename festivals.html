@@ -8,46 +8,64 @@
 </head>
 <body>
   <header class="site-header">
+    <div class="header-left">
+      <select id="langSelect">
+        <option value="uk">Українська</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <div class="header-right">
+      <a href="register.html" class="btn small" data-uk="Реєстрація" data-en="Register">Реєстрація</a>
+      <a href="login.html" class="btn small" data-uk="Вхід" data-en="Login">Вхід</a>
+    </div>
     <div class="search-bar">
-      <input type="text" placeholder="Search...">
+      <input type="text" id="festSearch" placeholder="Search festivals...">
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="festivals.html">Festivals</a></li>
-        <li><a href="bands.html">Bands</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html" data-uk="Головна" data-en="Home">Головна</a></li>
+        <li><a href="festivals.html" data-uk="Фестивалі" data-en="Festivals">Фестивалі</a></li>
+        <li><a href="bands.html" data-uk="Гурти" data-en="Bands">Гурти</a></li>
+        <li><a href="gallery.html" data-uk="Галерея" data-en="Gallery">Галерея</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Festivals</h1>
+    <h1 data-uk="Фестивалі" data-en="Festivals">Фестивалі</h1>
 
-    <div class="festival-card">
-      <img src="images/mutant-rock-banner.jpg" alt="Mutant Rock Weekender">
-      <div class="festival-info">
-        <h2>Mutant Rock Weekender</h2>
-        <p>A weekend full of mutant-powered rockabilly madness.</p>
-        <a href="festivals/mutant-rock.html" class="btn">More</a>
+    <div class="festival-list">
+      <div class="festival-card">
+        <img src="images/mutant-rock-banner.jpg" alt="">
+        <div class="festival-info">
+          <h2 data-uk="Mutant Rock Weekender" data-en="Mutant Rock Weekender">Mutant Rock Weekender</h2>
+          <p data-uk="Потужний рокабілі фестиваль із мутантними ритмами." data-en="A powerhouse rockabilly festival with mutant rhythms.">
+            Потужний рокабілі фестиваль із мутантними ритмами.
+          </p>
+          <a href="festivals/mutant-rock.html" class="btn" data-uk="Докладніше" data-en="More">Докладніше</a>
+        </div>
       </div>
-    </div>
 
-    <div class="festival-card">
-      <img src="images/psychobillymeeting.jfif" alt="Psychobilly Meeting">
-      <div class="festival-info">
-        <h2>Psychobilly Meeting</h2>
-        <p>The annual psychobilly gathering for fans worldwide.</p>
-        <a href="festivals/psychobillymeeting.html" class="btn">More</a>
+      <div class="festival-card">
+        <img src="images/psychobillymeeting.jfif" alt="">
+        <div class="festival-info">
+          <h2 data-uk="Psychobilly Meeting" data-en="Psychobilly Meeting">Psychobilly Meeting</h2>
+          <p data-uk="Щорічна зустріч фанатів психобіллі." data-en="Annual gathering of psychobilly fans.">
+            Щорічна зустріч фанатів психобіллі.
+          </p>
+          <a href="festivals/psychobillymeeting.html" class="btn" data-uk="Докладніше" data-en="More">Докладніше</a>
+        </div>
       </div>
-    </div>
 
-    <div class="festival-card">
-      <img src="images/rockinhell.jpg" alt="Rock In Hell">
-      <div class="festival-info">
-        <h2>Rock in Hell</h2>
-        <p>A dark, powerful gothic-punkabilly festival.</p>
-        <a href="festivals/rockinhell.html" class="btn">More</a>
+      <div class="festival-card">
+        <img src="images/rockinhell.jpg" alt="">
+        <div class="festival-info">
+          <h2 data-uk="Rock in Hell" data-en="Rock in Hell">Rock in Hell</h2>
+          <p data-uk="Темний готик-панкабілі фест із пекельними ритмами." data-en="A dark gothic-punkabilly fest with hellish beats.">
+            Темний готик-панкабілі фест із пекельними ритмами.
+          </p>
+          <a href="festivals/rockinhell.html" class="btn" data-uk="Докладніше" data-en="More">Докладніше</a>
+        </div>
       </div>
     </div>
   </main>
@@ -55,5 +73,18 @@
   <footer>
     <p>&copy; 2025 Psychobilly Festival Portal</p>
   </footer>
+
+  <script src="js/lang.js"></script>
+  <script>
+    document.getElementById('festSearch').addEventListener('keypress', e => {
+      if (e.key !== 'Enter') return;
+      e.preventDefault();
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.festival-card').forEach(card => {
+        const txt = card.querySelector('h2').textContent.toLowerCase();
+        card.style.display = txt.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
