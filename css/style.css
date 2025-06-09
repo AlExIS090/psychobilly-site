@@ -1,55 +1,49 @@
-#searchInput {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.events {
-  background: #111;
-  padding: 20px;
-  margin-top: 40px;
-  border-radius: 12px;
-}
-
-.events h2 {
-  color: #f50;
-  margin-bottom: 10px;
-}
-
-.events ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.events li {
-  margin-bottom: 10px;
-  font-weight: 500;
-  color: #ddd;
-}
-.back-button {
-  display: inline-block;
-  background-color: #222;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  transition: background-color 0.3s;
-}
-
-.back-button:hover {
-  background-color: #444;
-}
 .band-page {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 2rem;
+  background-color: #111;
+  color: #fff;
+  min-height: 100vh;
 }
 
 .band-info {
-  max-width: 600px;
   text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+
+.band-logo {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.album {
+  margin: 1rem 0;
+}
+
+.album-cover {
+  width: 100px;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.back-button {
+  display: inline-block;
+  background-color: #f39c12;
+  color: black;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #d35400;
 }
