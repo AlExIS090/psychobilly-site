@@ -31,3 +31,27 @@ h1, h2 {
   margin-bottom: 20px;
   border: 2px solid #800000;
 }
+.band-logo {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.album-cover {
+  width: 150px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.albums {
+  margin-top: 15px;
+}
+.album {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
