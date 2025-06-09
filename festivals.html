@@ -1,30 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Festivals & New Releases</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festivals</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Festivals & New Releases</h1>
-
-    <h2>Upcoming Festivals</h2>
-    <ul>
-      <li><strong>Psychobilly Fest 2025</strong> – June 12-14, London, UK</li>
-      <li><strong>Rockabilly Riot</strong> – July 8-10, Berlin, Germany</li>
-    </ul>
-
-    <h2>New Album Releases</h2>
-    <ul>
-      <li><strong>The Creepshow</strong> – *Midnight Madness* (2025)</li>
-      <li><strong>Demented Are Go</strong> – *Psychomania* (2025)</li>
-    </ul>
-
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="festivals.html">Festivals & Releases</a>
+  <header class="site-header">
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="festivals.html">Festivals</a></li>
+        <li><a href="bands.html">Bands</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
     </nav>
-  </div>
+  </header>
+
+  <main class="center-content">
+    <h1>Upcoming and past festivals</h1>
+
+    <div class="festival-list">
+      <div class="festival-card">
+        <img src="../images/mutant-rock-banner.jpg" alt="Mutant Rock Weekender">
+        <div class="festival-info">
+          <h2>Mutant Rock Weekender</h2>
+          <p>The legendary psychobilly festival will take place in summer 2025 in Germany. Mad Sin, The Meteors, Nekromantix and others will participate.</p>
+          <p><strong>Status:</strong> Active</p>
+          <a href="festivals/mutantrock.html" class="btn">More</a>
+        </div>
+      </div>
+
+      <div class="festival-card">
+        <img src="../images/psychobillymeeting.jfif" alt="Psychobilly Meeting">
+        <div class="festival-info">
+          <h2>Psychobilly Meeting</h2>
+          <p>An annual international festival in Spain. The largest open-air psychobilly festival in Europe. Fun, beach, and drive..</p>
+          <p><strong>Status:</strong> Ended</p>
+          <a href="festivals/psychobillymeeting.html" class="btn">More</a>
+        </div>
+      </div>
+
+      <div class="festival-card">
+        <img src="../images/rockinhell.jpg" alt="Rock In Hell">
+        <div class="festival-info">
+          <h2>Rock in Hell</h2>
+          <p>A dark, powerful gothic-punkabilly festival. Performances by bands from around the world in an atmosphere of a hellish show..</p>
+          <p><strong>Status:</strong> Active</p>
+          <a href="festivals/rockinhell.html" class="btn">More</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Psychobilly Festival Portal</p>
+  </footer>
 </body>
 </html>

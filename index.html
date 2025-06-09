@@ -1,63 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Psychobilly Bands Catalog</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychobilly Festival Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Psychobilly Bands</h1>
-    <p class="subtitle">Discover legendary and underground psychobilly bands</p>
+  <header class="site-header">
+  <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search...">
+</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="festivals.html">Festivals</a></li>
+        <li><a href="bands.html">Bands</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </nav>
   </header>
 
- <section class="events">
-  <h2>Upcoming Events & Festivals</h2>
-  <ul>
-    <li><a href="festivals/psychobilly-earthquake.html">Psychobilly Earthquake Festival</a> – July 20, 2025 – Berlin, Germany</li>
-    <li><a href="festivals/rockin-bones.html">Rockin' Bones Fest</a> – August 15, 2025 – Los Angeles, USA</li>
-    <li><a href="festivals/mutant-rock.html">Mutant Rock Weekender</a> – September 10, 2025 – London, UK</li>
-  </ul>
-</section>
+  <main class="main-layout">
+    <aside class="sidebar-left">
+      <h2>Festivals</h2>
+      <ul>
+        <li><a href="festivals/mutant-rock-weekender.html">Mutant Rock Weekender</a></li>
+        <li><a href="festivals/psycho-billy-bash.html">Psycho Billy Bash</a></li>
+      </ul>
+    </aside>
 
+    <section class="center-content">
+      <h1>Bands</h1>
+<div class="band-list">
+  <a href="bands/meteors.html" class="band-card" data-name="The Meteors">
+    <img src="images/the-meteors-logo.jfif" alt="The Meteors">
+    <h3>The Meteors</h3>
+  </a>
+  <a href="bands/mad-sin.html" class="band-card" data-name="Mad Sin">
+    <img src="images/mad-sin-logo.jpg" alt="Mad Sin">
+    <h3>Mad Sin</h3>
+  </a>
+  <a href="bands/nekromantix.html" class="band-card" data-name="Nekromantix">
+    <img src="images/nekromantix-logo.jpg" alt="Nekromantix">
+    <h3>Nekromantix</h3>
+  </a>
+</div>
 
-  <main>
-    <input type="text" id="searchInput" placeholder="Search bands..." />
-
-    <div class="band-grid">
-      <a href="bands/the-meteors.html" class="band-card">
-        <img src="images/the-meteors-logo.jfif" alt="The Meteors">
-        <h2>The Meteors</h2>
-      </a>
-
-      <a href="bands/nekromantix.html" class="band-card">
-        <img src="images/nekromantix-logo.jfif" alt="Nekromantix">
-        <h2>Nekromantix</h2>
-      </a>
-
-      <a href="bands/mad-sin.html" class="band-card">
-        <img src="images/mad-sin-logo-1.jpg" alt="Mad Sin">
-        <h2>Mad Sin</h2>
-      </a>
-    </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Psychobilly Archives</p>
+    <p>&copy; 2025 Psychobilly Festival Portal</p>
   </footer>
-
-  <script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('searchInput');
     const bandCards = document.querySelectorAll('.band-card');
 
-    searchInput.addEventListener('input', () => {
-      const filter = searchInput.value.toLowerCase();
+    searchInput.addEventListener('input', function () {
+      const query = searchInput.value.toLowerCase();
+
       bandCards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(filter) ? '' : 'none';
+        const bandName = card.dataset.name.toLowerCase();
+        if (bandName.includes(query)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>

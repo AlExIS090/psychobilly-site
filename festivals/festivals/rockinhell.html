@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mutant Rock Weekender</title>
+  <title>Rock in Hell Festival</title>
   <link rel="stylesheet" href="../styles.css" />
   <script defer>
     document.addEventListener("DOMContentLoaded", function () {
-      const targetDate = new Date("2025-08-01T18:00:00").getTime();
+      const date = new Date("2025-09-13T19:00:00").getTime();
       const countdown = document.getElementById("countdown");
 
       function updateCountdown() {
         const now = new Date().getTime();
-        const diff = targetDate - now;
+        const diff = date - now;
 
         if (diff <= 0) {
-          countdown.textContent = "The festival has already started!";
+          countdown.textContent = "The event is currently happening or has ended!";
           return;
         }
 
@@ -24,7 +24,7 @@
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        countdown.textContent = `Before start: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdown.textContent = `Starts in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
       }
 
       updateCountdown();
@@ -35,7 +35,7 @@
 <body>
   <header class="site-header">
     <div class="search-bar">
-      <input type="text" placeholder="Serach..." />
+      <input type="text" placeholder="Search..." />
     </div>
     <nav class="main-nav">
       <ul>
@@ -48,21 +48,21 @@
   </header>
 
   <main class="center-content">
-    <h1>Mutant Rock Weekender 2025</h1>
+    <h1>Rock in Hell Festival 2025</h1>
 
     <div class="festival-banner">
-      <img src="../images/mutant-rock-banner.jpg" alt="Mutant Rock Weekender Poster" style="width:100%; border-radius: 12px;">
+      <img src="../images/rockinhell.jpg" alt="Rock in Hell Poster" style="width:100%; border-radius: 12px;">
     </div>
 
     <div id="countdown" style="margin: 20px 0; font-size: 20px; color: #ff0055;"></div>
 
     <section class="festival-details">
-      <p><strong>Date:</strong> 1-3 Juli 2025</p>
-      <p><strong>Place:</strong> Berlin, Germany</p>
+      <p><strong>Date:</strong> September 13, 2025</p>
+      <p><strong>Location:</strong> Hamburg, Germany</p>
       <p>
-        Mutant Rock Weekender is an explosive mix of psychobilly, rockabilly, and horror punk. This year on stage: Mad Sin, Nekromantix, The Brains, The Meteors, Batmobile and others.
+        Rock in Hell is a fiery one-night event featuring psychobilly legends and underground rock horror acts. Expect chaos, costumes, loud music, and no rules!
       </p>
-      <a href="https://tickets.mutantrock.com" class="btn" target="_blank">Buy tickets</a>
+      <a href="https://tickets.rockinhell.com" class="btn" target="_blank">Buy Tickets</a>
     </section>
 
     <section class="band-lineup" style="margin-top: 40px;">
@@ -76,9 +76,9 @@
           <img src="../images/nekromantix-logo.jfif" alt="Nekromantix">
           <p>Nekromantix</p>
         </a>
-        <a href="../bands/meteors.html" class="band-card">
-          <img src="../images/the-meteors-logo" alt="The Meteors">
-          <p>The Meteors</p>
+        <a href="../bands/brains.html" class="band-card">
+          <img src="../images/brains.jpg" alt="The Brains">
+          <p>The Brains</p>
         </a>
       </div>
     </section>
