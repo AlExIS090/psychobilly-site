@@ -29,15 +29,15 @@
       if (stored) {
         const u = JSON.parse(stored);
         if (u.pass === password.value) {
-          document.getElementById('loginMsg').textContent = 
-            u.name + (document.documentElement.lang === 'uk'
-              ? ', ви увійшли успішно!'
-              : ', you have logged in!');
+          document.getElementById('loginMsg').textContent =
+            document.documentElement.lang==='uk'
+            ? `${u.name}, ви увійшли успішно!`
+            : `${u.name}, you have logged in!`;
           return;
         }
       }
       document.getElementById('loginMsg').textContent =
-        document.documentElement.lang === 'uk'
+        document.documentElement.lang==='uk'
         ? 'Невірний email або пароль'
         : 'Invalid email or password';
     });

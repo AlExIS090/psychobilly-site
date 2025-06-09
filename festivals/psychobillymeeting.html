@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Psychobilly Meeting</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-left">
-      <select id="langSelect">
-        <option value="uk">Українська</option>
-        <option value="en">English</option>
-      </select>
-    </div>
-    <div class="header-right">
-      <a href="../register.html" class="btn small" data-uk="Реєстрація" data-en="Register">Реєстрація</a>
-      <a href="../login.html" class="btn small" data-uk="Вхід" data-en="Login">Вхід</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="../index.html" data-uk="Головна" data-en="Home">Головна</a></li>
-        <li><a href="../festivals.html" data-uk="Фестивалі" data-en="Festivals">Фестивалі</a></li>
-        <li><a href="../bands.html" data-uk="Гурти" data-en="Bands">Гурти</a></li>
-        <li><a href="../gallery.html" data-uk="Галерея" data-en="Gallery">Галерея</a></li>
-      </ul>
-    </nav>
-  </header>
+  <header class="site-header">…</header>
 
   <main class="detail-page">
     <h1 data-uk="Psychobilly Meeting" data-en="Psychobilly Meeting">Psychobilly Meeting</h1>
@@ -34,11 +14,9 @@
 
     <p id="status" data-uk="Статус: скоро!" data-en="Status: Upcoming">Статус: скоро!</p>
     <p data-uk="До початку залишилось:" data-en="Time until start:">До початку залишилось:</p>
-    <p id="countdown">00:00:00</p>
+    <p id="countdown">00d 00h 00m 00s</p>
 
-    <a href="https://www.bandsintown.com/?came_from=251" target="_blank" class="btn" data-uk="Купити квитки" data-en="Buy Tickets">
-      Купити квитки
-    </a>
+    <a href="https://www.bandsintown.com/?came_from=251" target="_blank" class="btn" data-uk="Купити квитки" data-en="Buy Tickets">Купити квитки</a>
 
     <h2 data-uk="Гурти" data-en="Lineup">Гурти</h2>
     <div class="band-list">
@@ -68,19 +46,19 @@
       const diff = target - new Date();
       if (diff <= 0) {
         document.getElementById('status').textContent =
-          document.documentElement.lang === 'uk'
-          ? 'Статус: розпочато!'
-          : 'Status: Started!';
-        document.getElementById('countdown').textContent = '00:00:00';
+          document.documentElement.lang==='uk'?'Статус: розпочато!':'Status: Started!';
+        document.getElementById('countdown').textContent = '00d 00h 00m 00s';
         clearInterval(timer);
         return;
       }
-      const h = String(Math.floor(diff/3600000)).padStart(2,'0');
-      const m = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
-      const s = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
-      document.getElementById('countdown').textContent = `${h}:${m}:${s}`;
+      const days = Math.floor(diff/86400000);
+      const hrs = Math.floor((diff%86400000)/3600000);
+      const mins = Math.floor((diff%3600000)/60000);
+      const secs = Math.floor((diff%60000)/1000);
+      document.getElementById('countdown').textContent =
+        `${days}d ${hrs}h ${mins}m ${secs}s`;
     };
-    const timer = setInterval(cd, 1000);
+    const timer = setInterval(cd,1000);
     cd();
   </script>
 </body>

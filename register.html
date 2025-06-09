@@ -19,7 +19,7 @@
       <input type="password" name="password" required>
       <button type="submit" class="btn" data-uk="Зареєструватися" data-en="Register">Зареєструватися</button>
     </form>
-    <p id="regMsg" class="form-message"></p> 
+    <p id="regMsg" class="form-message"></p>
   </main>
 
   <script src="js/lang.js"></script>
@@ -29,8 +29,8 @@
       const fm = e.target;
       const user = { name: fm.name.value, email: fm.email.value, pass: fm.password.value };
       localStorage.setItem('user:'+user.email, JSON.stringify(user));
-      document.getElementById('regMsg').textContent = 
-        fm.querySelector('button').getAttribute('data-uk') === 'Зареєструватися'
+      document.getElementById('regMsg').textContent =
+        document.documentElement.lang==='uk'
         ? 'Реєстрація пройшла успішно!'
         : 'Registration successful!';
       fm.reset();
