@@ -1,0 +1,33 @@
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #fef6e4;
+  color: #2b2b2b;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #800000;
+}
+
+.band-item {
+  background-color: #fff;
+  border-left: 5px solid #800000;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 2px solid #800000;
+}
