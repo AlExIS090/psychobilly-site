@@ -6,7 +6,13 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">…</header>
+  <header class="site-header">
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" data-uk="Головна" data-en="Home">Головна</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="form-container">
     <h1 data-uk="Вхід" data-en="Login">Вхід</h1>
@@ -31,15 +37,15 @@
         if (u.pass === password.value) {
           document.getElementById('loginMsg').textContent =
             document.documentElement.lang==='uk'
-            ? `${u.name}, ви увійшли успішно!`
-            : `${u.name}, you have logged in!`;
+              ? `${u.name}, ви увійшли успішно!`
+              : `${u.name}, you have logged in!`;
           return;
         }
       }
       document.getElementById('loginMsg').textContent =
         document.documentElement.lang==='uk'
-        ? 'Невірний email або пароль'
-        : 'Invalid email or password';
+          ? 'Невірний email або пароль'
+          : 'Invalid email or password';
     });
   </script>
 </body>

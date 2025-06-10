@@ -137,10 +137,10 @@ footer {
   flex-wrap: wrap;
 }
 
-.festival-card img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
+.festival-card img { 
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .festival-info {

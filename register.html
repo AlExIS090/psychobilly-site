@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">…</header>
+  <header class="site-header">
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" data-uk="Головна" data-en="Home">Головна</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main class="form-container">
     <h1 data-uk="Реєстрація" data-en="Register">Реєстрація</h1>
@@ -31,8 +38,8 @@
       localStorage.setItem('user:'+user.email, JSON.stringify(user));
       document.getElementById('regMsg').textContent =
         document.documentElement.lang==='uk'
-        ? 'Реєстрація пройшла успішно!'
-        : 'Registration successful!';
+          ? 'Реєстрація пройшла успішно!'
+          : 'Registration successful!';
       fm.reset();
     });
   </script>

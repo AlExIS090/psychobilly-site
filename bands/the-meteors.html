@@ -1,17 +1,53 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>…</head>
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Meteors</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
 <body>
-  <header>…</header>
+  <header class="site-header">
+    <div class="header-left">
+      <select id="langSelect">
+        <option value="uk">Українська</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <div class="header-right">
+      <a href="../register.html" class="btn small" data-uk="Реєстрація" data-en="Register">Реєстрація</a>
+      <a href="../login.html" class="btn small" data-uk="Вхід" data-en="Login">Вхід</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../index.html" data-uk="Головна" data-en="Home">Головна</a></li>
+        <li><a href="../festivals.html" data-uk="Фестивалі" data-en="Festivals">Фестивалі</a></li>
+        <li><a href="../bands.html" data-uk="Гурти" data-en="Bands">Гурти</a></li>
+        <li><a href="../gallery.html" data-uk="Галерея" data-en="Gallery">Галерея</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main>
     <h1>The Meteors</h1>
     <img src="../images/the-meteors-logo.jfif" class="detail-img" alt="The Meteors">
     <p data-uk="Легендарні британські піонери психобіллі з більш ніж 35-річною історією." data-en="Legendary British psychobilly pioneers with a 35+ year history.">
       Легендарні британські піонери психобіллі з більш ніж 35-річною історією.
     </p>
-    <section class="album-grid">…</section>
+    <section class="album-grid">
+      <div class="album-card">
+        <img src="../images/the-meteors-album-1.jpg" alt="In Heaven">
+        <h3 data-uk="In Heaven" data-en="In Heaven">In Heaven</h3>
+      </div>
+      <div class="album-card">
+        <img src="../images/the-meteors-album-2.jpg" alt="Wreckin’ Crew">
+        <h3 data-uk="Wreckin’ Crew" data-en="Wreckin’ Crew">Wreckin’ Crew</h3>
+      </div>
+    </section>
   </main>
-  <footer>…</footer>
+
+  <footer>
+    <p>&copy; 2025 Psychobilly Festival Portal</p>
+  </footer>
   <script src="../js/lang.js"></script>
 </body>
 </html>

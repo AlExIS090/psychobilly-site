@@ -19,7 +19,7 @@
       <a href="login.html" class="btn small" data-uk="Вхід" data-en="Login">Вхід</a>
     </div>
     <div class="search-bar">
-      <input type="text" id="festSearch" placeholder="Search festivals...">
+      <input type="text" id="festSearch" placeholder="Search festivals..." />
     </div>
     <nav class="main-nav">
       <ul>
@@ -36,7 +36,7 @@
 
     <div class="festival-list">
       <div class="festival-card">
-        <img src="images/mutant-rock-banner.jpg" alt="">
+        <img src="images/mutant-rock-banner.jpg" alt="Mutant Rock Weekender">
         <div class="festival-info">
           <h2 data-uk="Mutant Rock Weekender" data-en="Mutant Rock Weekender">Mutant Rock Weekender</h2>
           <p data-uk="Потужний рокабілі фестиваль із мутантними ритмами." data-en="A powerhouse rockabilly festival with mutant rhythms.">
@@ -47,7 +47,7 @@
       </div>
 
       <div class="festival-card">
-        <img src="images/psychobillymeeting.jfif" alt="">
+        <img src="images/psychobillymeeting.jfif" alt="Psychobilly Meeting">
         <div class="festival-info">
           <h2 data-uk="Psychobilly Meeting" data-en="Psychobilly Meeting">Psychobilly Meeting</h2>
           <p data-uk="Щорічна зустріч фанатів психобіллі." data-en="Annual gathering of psychobilly fans.">
@@ -58,7 +58,7 @@
       </div>
 
       <div class="festival-card">
-        <img src="images/rockinhell.jpg" alt="">
+        <img src="images/rockinhell.jpg" alt="Rock in Hell">
         <div class="festival-info">
           <h2 data-uk="Rock in Hell" data-en="Rock in Hell">Rock in Hell</h2>
           <p data-uk="Темний готик-панкабілі фест із пекельними ритмами." data-en="A dark gothic-punkabilly fest with hellish beats.">
@@ -76,10 +76,10 @@
 
   <script src="js/lang.js"></script>
   <script>
-    document.getElementById('festSearch').addEventListener('keypress', e => {
+    document.getElementById('festSearch').addEventListener('keypress', function(e) {
       if (e.key !== 'Enter') return;
       e.preventDefault();
-      const q = e.target.value.toLowerCase();
+      const q = this.value.toLowerCase();
       document.querySelectorAll('.festival-card').forEach(card => {
         const txt = card.querySelector('h2').textContent.toLowerCase();
         card.style.display = txt.includes(q) ? '' : 'none';
