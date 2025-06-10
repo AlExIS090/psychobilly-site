@@ -2,56 +2,62 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mutant Rock Weekender</title>
+  <title>Rock in Hell</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="site-header">…</header>
+  <header class="site-header">
+    <a href="../index.html" class="btn small" data-uk="Головна" data-en="Home">Головна</a>
+  </header>
 
   <main class="detail-page">
-    <h1 data-uk="Mutant Rock Weekender" data-en="Mutant Rock Weekender">Mutant Rock Weekender</h1>
-    <img src="../images/mutant-rock-banner.jpg" alt="" class="detail-img">
-
+    <h1 data-uk="Rock in Hell" data-en="Rock in Hell">Rock in Hell</h1>
+    <img src="../images/rockinhell.jpg" class="detail-img" alt="Rock in Hell">
     <p id="status" data-uk="Статус: скоро!" data-en="Status: Upcoming">Статус: скоро!</p>
     <p data-uk="До початку залишилось:" data-en="Time until start:">До початку залишилось:</p>
     <p id="countdown">00d 00h 00m 00s</p>
 
-    <p data-uk="Потужний рокабілі фестиваль із мутантними ритмами та зірковим лайнапом." data-en="A powerhouse rockabilly festival with mutant rhythms and a stellar lineup.">
-      Потужний рокабілі фестиваль із мутантними ритмами та зірковим лайнапом.
+    <p data-uk="Темний готик‑панкабілі фест..." data-en="A dark gothic-punkabilly fest...">
+      Темний готик-панкабілі фест із пекельними ритмами та унікальним лайнапом.
     </p>
-
-    <a href="https://www.bandsintown.com/?came_from=251" target="_blank" class="btn" data-uk="Купити квитки" data-en="Buy Tickets">Купити квитки</a>
 
     <h2 data-uk="Гурти" data-en="Lineup">Гурти</h2>
     <div class="band-list">
-      …  
+      <div class="band-card">
+        <img src="../images/the-meteors-logo.jfif" alt="The Meteors"><h3>The Meteors</h3>
+      </div>
+      <div class="band-card">
+        <img src="../images/mad-sin-logo-1.jpg" alt="Mad Sin"><h3>Mad Sin</h3>
+      </div>
+      <div class="band-card">
+        <img src="../images/nekromantix-logo.jfif" alt="Nekromantix"><h3>Nekromantix</h3>
+      </div>
     </div>
+
+    <a href="https://www.bandsintown.com/?came_from=251" class="btn" target="_blank" data-uk="Купити квитки" data-en="Buy Tickets">Купити квитки</a>
   </main>
 
-  <footer>…</footer>
+  <footer><p>&copy; 2025 Psychobilly Festival Portal</p></footer>
 
   <script src="../js/lang.js"></script>
   <script>
-    const target = new Date('2025-08-15T12:00:00');
-    const cd = () => {
+    const target = new Date('2025-10-05T20:00:00');
+    const timerFn = ()=> {
       const diff = target - new Date();
-      if (diff <= 0) {
-        document.getElementById('status').textContent =
-          document.documentElement.lang==='uk'
-            ? 'Статус: розпочато!'
-            : 'Status: Started!';
+      if(diff <= 0){
+        document.getElementById('status').textContent = document.documentElement.lang==='uk' ? 'Статус: розпочато!' : 'Status: Started!';
         document.getElementById('countdown').textContent = '00d 00h 00m 00s';
         clearInterval(timer);
         return;
       }
-      const days = Math.floor(diff/86400000);
-      const hrs  = Math.floor((diff%86400000)/3600000);
-      const mins = Math.floor((diff%3600000)/60000);
-      const secs = Math.floor((diff%60000)/1000);
+      const days = Math.floor(diff/86400000),
+            hrs = Math.floor((diff%86400000)/3600000),
+            mins = Math.floor((diff%3600000)/60000),
+            secs = Math.floor((diff%60000)/1000);
       document.getElementById('countdown').textContent = `${days}d ${hrs}h ${mins}m ${secs}s`;
     };
-    const timer = setInterval(cd,1000);
-    cd();
+    const timer = setInterval(timerFn, 1000);
+    timerFn();
   </script>
 </body>
 </html>
