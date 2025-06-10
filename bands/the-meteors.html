@@ -1,53 +1,48 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Meteors</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-uk="The Meteors" data-en="The Meteors">The Meteors</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="header-left">
-      <select id="langSelect">
-        <option value="uk">Українська</option>
-        <option value="en">English</option>
-      </select>
-    </div>
-    <div class="header-right">
-      <a href="../register.html" class="btn small" data-uk="Реєстрація" data-en="Register">Реєстрація</a>
-      <a href="../login.html" class="btn small" data-uk="Вхід" data-en="Login">Вхід</a>
-    </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="../index.html" data-uk="Головна" data-en="Home">Головна</a></li>
-        <li><a href="../festivals.html" data-uk="Фестивалі" data-en="Festivals">Фестивалі</a></li>
-        <li><a href="../bands.html" data-uk="Гурти" data-en="Bands">Гурти</a></li>
-        <li><a href="../gallery.html" data-uk="Галерея" data-en="Gallery">Галерея</a></li>
-      </ul>
-    </nav>
+    <a href="../index.html" class="btn small" data-uk="Головна" data-en="Home">Головна</a>
+    <select id="langSelect">
+      <option value="uk">Українська</option>
+      <option value="en">English</option>
+    </select>
   </header>
 
   <main class="detail-page">
     <h1>The Meteors</h1>
-    <img src="../images/the-meteors-logo.jfif" class="detail-img" alt="The Meteors">
-    <p data-uk="Легендарні британські піонери психобіллі з більш ніж 35-річною історією." data-en="Legendary British psychobilly pioneers with a 35+ year history.">
+    <img src="../images/the-meteors-logo.jfif" class="detail-img" alt="The Meteors Logo">
+
+    <p class="band-description"
+       data-uk="Легендарні британські піонери психобіллі з більш ніж 35-річною історією."
+       data-en="Legendary British psychobilly pioneers with a 35+ year history.">
       Легендарні британські піонери психобіллі з більш ніж 35-річною історією.
     </p>
-    <section class="album-grid">
-      <div class="album-card">
-        <img src="../images/the-meteors-album-1.jpg" alt="In Heaven">
-        <h3 data-uk="In Heaven" data-en="In Heaven">In Heaven</h3>
-      </div>
-      <div class="album-card">
-        <img src="../images/the-meteors-album-2.jpg" alt="Wreckin’ Crew">
-        <h3 data-uk="Wreckin’ Crew" data-en="Wreckin’ Crew">Wreckin’ Crew</h3>
-      </div>
-    </section>
+
+    <h2 data-uk="Альбоми" data-en="Albums">Альбоми</h2>
+    <ol>
+      <li>Wreckin' Crew (1983)</li>
+      <li>In Heaven (1985)</li>
+      <li>Demons of the Swamp (1989)</li>
+    </ol>
+
+    <h2 data-uk="Відео" data-en="Video">Відео</h2>
+    <div class="video-container">
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/q1ShDSt1iks?si=4LvRW-20QWNJkSl8"
+        title="The Meteors - Video"
+        frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Psychobilly Festival Portal</p>
-  </footer>
-   <script src="js/lang.js"></script>
+  <footer><p>&copy; 2025 Psychobilly Festival Portal</p></footer>
+  <script src="../js/lang.js"></script>
 </body>
 </html>

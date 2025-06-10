@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mad Sin</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-uk="Mad Sin" data-en="Mad Sin">Mad Sin</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header class="site-header">
     <a href="../index.html" class="btn small" data-uk="Головна" data-en="Home">Головна</a>
+    <select id="langSelect">
+      <option value="uk">Українська</option>
+      <option value="en">English</option>
+    </select>
   </header>
 
-  <main class="center-content">
-    <div class="band-hero">
-      <img src="../images/mad-sin-logo-1.jpg" alt="Mad Sin">
-    </div>
+  <main class="detail-page">
+    <h1>Mad Sin</h1>
+    <img src="../images/mad-sin-logo-1.jpg" class="detail-img" alt="Mad Sin Logo">
 
-    <div class="band-description" data-uk="Mad Sin — німецький психобіллі гурт, який поєднує панк, рокабілі та хоррор-естетику." 
-         data-en="Mad Sin is a German psychobilly band blending punk, rockabilly and horror aesthetics.">
-      Mad Sin — німецький психобіллі гурт, який поєднує панк, рокабілі та хоррор-естетику.
-    </div>
+    <p class="band-description"
+       data-uk="Німецькі психобіллі ветерани з енергійними виступами та безліччю альбомів."
+       data-en="German psychobilly veterans known for energetic shows and numerous albums.">
+      Німецькі психобіллі ветерани з енергійними виступами та безліччю альбомів.
+    </p>
 
-    <div class="band-albums">
-      <h2 data-uk="Альбоми" data-en="Albums">Альбоми</h2>
-      <div class="album-grid">
-        <div class="album-card">
-          <img src="../images/mad-sin-album-1.jpg" alt="Album 1">
-          <p>Burn and Rise</p>
-        </div>
-        <div class="album-card">
-          <img src="../images/mad-sin-album-22.jpg" alt="Album 2">
-          <p>25 Years - Still Mad</p>
-        </div>
-      </div>
+    <h2 data-uk="Альбоми" data-en="Albums">Альбоми</h2>
+    <ol>
+      <li>Radioactive (1990)</li>
+      <li>Teachin' the Goodies (1991)</li>
+      <li>Burn and Rise (2018)</li>
+    </ol>
+
+    <h2 data-uk="Відео" data-en="Video">Відео</h2>
+    <div class="video-container">
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/_F9qyUp5dpo?si=TgnOZBO-J9TE7zRW"
+        title="Mad Sin - Video"
+        frameborder="0" allowfullscreen>
+      </iframe>
     </div>
   </main>
 
   <footer><p>&copy; 2025 Psychobilly Festival Portal</p></footer>
-   <script src="js/lang.js"></script>
+  <script src="../js/lang.js"></script>
 </body>
 </html>

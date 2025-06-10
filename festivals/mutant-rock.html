@@ -17,7 +17,9 @@
 
   <main class="detail-page">
     <h1 data-uk="Mutant Rock Weekender" data-en="Mutant Rock Weekender">Mutant Rock Weekender</h1>
+
     <img src="../images/mutant-rock-banner.jpg" class="detail-img" alt="Mutant Rock Weekender">
+
     <p id="status" data-uk="Статус: скоро!" data-en="Status: Upcoming">Статус: скоро!</p>
     <p data-uk="До початку залишилось:" data-en="Time until start:">До початку залишилось:</p>
     <p id="countdown">00d 00h 00m 00s</p>
@@ -26,6 +28,21 @@
        data-en="A powerhouse rockabilly festival with mutant rhythms and a stellar lineup.">
       Потужний рокабілі фестиваль із мутантними ритмами та зірковим лайнапом.
     </p>
+
+    <h2 data-uk="Розклад" data-en="Schedule">Розклад</h2>
+    <table>
+      <thead>
+        <tr>
+          <th data-uk="Час" data-en="Time">Час</th>
+          <th data-uk="Гурт" data-en="Band">Гурт</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>18:00</td><td>The Meteors</td></tr>
+        <tr><td>20:00</td><td>Mad Sin</td></tr>
+        <tr><td>22:00</td><td>Nekromantix</td></tr>
+      </tbody>
+    </table>
 
     <h2 data-uk="Гурти" data-en="Lineup">Гурти</h2>
     <div class="band-list">
@@ -52,9 +69,7 @@
     </a>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Psychobilly Festival Portal</p>
-  </footer>
+  <footer><p>&copy; 2025 Psychobilly Festival Portal</p></footer>
 
   <script src="../js/lang.js"></script>
   <script>
@@ -63,20 +78,18 @@
       const diff = target - new Date();
       if (diff <= 0) {
         document.getElementById('status').textContent =
-          document.documentElement.lang === 'uk'
-            ? 'Статус: розпочато!'
-            : 'Status: Started!';
+          document.documentElement.lang==='uk' ? 'Статус: розпочато!' : 'Status: Started!';
         document.getElementById('countdown').textContent = '00d 00h 00m 00s';
-        clearInterval(interval);
+        clearInterval(timer);
         return;
       }
-      const days = Math.floor(diff / 86400000),
-            hrs = Math.floor((diff % 86400000) / 3600000),
-            mins = Math.floor((diff % 3600000) / 60000),
-            secs = Math.floor((diff % 60000) / 1000);
+      const days = Math.floor(diff/86400000),
+            hrs  = Math.floor((diff%86400000)/3600000),
+            mins = Math.floor((diff%3600000)/60000),
+            secs = Math.floor((diff%60000)/1000);
       document.getElementById('countdown').textContent = `${days}d ${hrs}h ${mins}m ${secs}s`;
     };
-    const interval = setInterval(updateTimer, 1000);
+    const timer = setInterval(updateTimer, 1000);
     updateTimer();
   </script>
 </body>

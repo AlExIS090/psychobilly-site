@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nekromantix</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-uk="Nekromantix" data-en="Nekromantix">Nekromantix</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <header class="site-header">
     <a href="../index.html" class="btn small" data-uk="Головна" data-en="Home">Головна</a>
+    <select id="langSelect">
+      <option value="uk">Українська</option>
+      <option value="en">English</option>
+    </select>
   </header>
 
-  <main class="center-content">
-    <div class="band-hero">
-      <img src="../images/nekromantix-logo.jfif" alt="Nekromantix">
-    </div>
+  <main class="detail-page">
+    <h1>Nekromantix</h1>
+    <img src="../images/nekromantix-logo.jfif" class="detail-img" alt="Nekromantix Logo">
 
-    <div class="band-description" data-uk="Nekromantix — легендарний психобіллі гурт з Данії, відомий своїм унікальним звучанням та труною-контрабасом." 
-         data-en="Nekromantix is a legendary psychobilly band from Denmark, known for their unique sound and coffin-shaped upright bass.">
-      Nekromantix — легендарний психобіллі гурт з Данії, відомий своїм унікальним звучанням та труною-контрабасом.
-    </div>
+    <p class="band-description"
+       data-uk="Данські рокабілі гурти з унікальним цвинтарним стилем та впізнаваним звуком."
+       data-en="Danish rockabilly band with a unique graveyard style and signature sound.">
+      Данські рокабілі гурти з унікальним цвинтарним стилем та впізнаваним звуком.
+    </p>
 
-    <div class="band-albums">
-      <h2 data-uk="Альбоми" data-en="Albums">Альбоми</h2>
-      <div class="album-grid">
-        <div class="album-card">
-          <img src="../images/nekromantix-album-1.jpg" alt="Album 1">
-          <p>Return of the Loving Dead</p>
-        </div>
-        <div class="album-card">
-          <img src="../images/nekromantix-album-2.jpg" alt="Album 2">
-          <p>Life is a Grave & I Dig It!</p>
-        </div>
-      </div>
+    <h2 data-uk="Альбоми" data-en="Albums">Альбоми</h2>
+    <ol>
+      <li>Undead (1989)</li>
+      <li>Brought Back to Life (1994)</li>
+      <li>Return of the Loving Dead (1994)</li>
+    </ol>
+
+    <h2 data-uk="Відео" data-en="Video">Відео</h2>
+    <div class="video-container">
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/Yu3TcSPK08E?si=0111csjCRNwXkS4F"
+        title="Nekromantix - Video"
+        frameborder="0" allowfullscreen>
+      </iframe>
     </div>
   </main>
 
   <footer><p>&copy; 2025 Psychobilly Festival Portal</p></footer>
-  <script src="js/lang.js"></script>
+  <script src="../js/lang.js"></script>
 </body>
 </html>
