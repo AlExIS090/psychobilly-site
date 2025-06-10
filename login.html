@@ -26,26 +26,30 @@
     <p id="loginMsg" class="form-message"></p>
   </main>
 
+  <div class="collage">
+    <img src="images/Colage1.jpg" alt="Collage 1">
+    <img src="images/Colage2.jpg" alt="Collage 2">
+  </div>
+
   <script src="js/lang.js"></script>
   <script>
     document.getElementById('loginForm').addEventListener('submit', e => {
       e.preventDefault();
       const { email, password } = e.target;
       const stored = localStorage.getItem('user:'+email.value);
+      let msg = document.getElementById('loginMsg');
       if (stored) {
         const u = JSON.parse(stored);
         if (u.pass === password.value) {
-          document.getElementById('loginMsg').textContent =
-            document.documentElement.lang==='uk'
-              ? `${u.name}, ви увійшли успішно!`
-              : `${u.name}, you have logged in!`;
+          msg.textContent = document.documentElement.lang==='uk'
+            ? `${u.name}, ви увійшли успішно!`
+            : `${u.name}, you have logged in!`;
           return;
         }
       }
-      document.getElementById('loginMsg').textContent =
-        document.documentElement.lang==='uk'
-          ? 'Невірний email або пароль'
-          : 'Invalid email or password';
+      msg.textContent = document.documentElement.lang==='uk'
+        ? 'Невірний email або пароль'
+        : 'Invalid email or password';
     });
   </script>
 </body>
