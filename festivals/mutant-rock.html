@@ -3,28 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mutant Rock Weekender</title>
+  <title data-uk="Mutant Rock Weekender" data-en="Mutant Rock Weekender">Mutant Rock Weekender</title>
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('../images/bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
-    .site-header { display: flex; align-items: center; padding: 1rem; background: rgba(0,0,0,0.6); }
-    .btn { background: #ff0055; color: #fff; border: none; padding: 0.5rem 1rem; text-decoration: none; font-weight: bold; border-radius: 5px; transition: background .3s; }
-    .btn:hover { background: #cc0044; }
-    .btn.small { font-size: .85rem; padding: .3rem .8rem; margin-right: 1rem; }
-    .detail-page { padding: 2rem; background: rgba(0,0,0,0.6); margin: 2rem; border-radius: 10px; }
-    .detail-img { width: 100%; height:45vh; object-fit: cover; border-radius:10px; margin-bottom:1rem; }
-    .band-list { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin:1rem 0; }
-    .band-card { background: rgba(255,255,255,0.1); border-radius:8px; padding:1rem; text-align:center; width:150px; }
-    .band-card img { max-width:100%; height:auto; object-fit:contain; margin-bottom:.5rem; }
-    footer { text-align:center; padding:1rem; background: rgba(0,0,0,0.6); margin-top:2rem; }
-    #countdown { font-weight:bold; font-size:1.2rem; }
-  </style>
 </head>
 <body>
   <header class="site-header">
@@ -42,7 +22,8 @@
     <p data-uk="До початку залишилось:" data-en="Time until start:">До початку залишилось:</p>
     <p id="countdown">00d 00h 00m 00s</p>
 
-    <p data-uk="Потужний рокабілі фестиваль із мутантними ритмами та зірковим лайнапом." data-en="A powerhouse rockabilly festival with mutant rhythms and a stellar lineup.">
+    <p data-uk="Потужний рокабілі фестиваль із мутантними ритмами та зірковим лайнапом."
+       data-en="A powerhouse rockabilly festival with mutant rhythms and a stellar lineup.">
       Потужний рокабілі фестиваль із мутантними ритмами та зірковим лайнапом.
     </p>
 
@@ -62,7 +43,13 @@
       </div>
     </div>
 
-    <a href="https://www.bandsintown.com/?came_from=251" class="btn" target="_blank" data-uk="Купити квитки" data-en="Buy Tickets">Купити квитки</a>
+    <a href="https://www.bandsintown.com/?came_from=251"
+       class="btn"
+       target="_blank"
+       data-uk="Купити квитки"
+       data-en="Buy Tickets">
+      Купити квитки
+    </a>
   </main>
 
   <footer>
@@ -75,15 +62,18 @@
     const updateTimer = () => {
       const diff = target - new Date();
       if (diff <= 0) {
-        document.getElementById('status').textContent = document.documentElement.lang==='uk' ? 'Статус: розпочато!' : 'Status: Started!';
+        document.getElementById('status').textContent =
+          document.documentElement.lang === 'uk'
+            ? 'Статус: розпочато!'
+            : 'Status: Started!';
         document.getElementById('countdown').textContent = '00d 00h 00m 00s';
         clearInterval(interval);
         return;
       }
-      const days = Math.floor(diff/86400000),
-            hrs  = Math.floor((diff%86400000)/3600000),
-            mins = Math.floor((diff%3600000)/60000),
-            secs = Math.floor((diff%60000)/1000);
+      const days = Math.floor(diff / 86400000),
+            hrs = Math.floor((diff % 86400000) / 3600000),
+            mins = Math.floor((diff % 3600000) / 60000),
+            secs = Math.floor((diff % 60000) / 1000);
       document.getElementById('countdown').textContent = `${days}d ${hrs}h ${mins}m ${secs}s`;
     };
     const interval = setInterval(updateTimer, 1000);
@@ -91,4 +81,3 @@
   </script>
 </body>
 </html>
-
