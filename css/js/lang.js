@@ -1,17 +1,21 @@
-(function(){
+(function() {
   const sel = document.getElementById('langSelect');
-  const apply = lang => {
+  if (!sel) return;
+
+  const applyLang = lang => {
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-uk]').forEach(el => {
       el.textContent = el.getAttribute(`data-${lang}`);
     });
   };
+
   const saved = localStorage.getItem('site-lang') || 'uk';
   sel.value = saved;
-  apply(saved);
+  applyLang(saved);
 
   sel.addEventListener('change', () => {
     localStorage.setItem('site-lang', sel.value);
-    apply(sel.value);
+    applyLang(sel.value);
   });
 })();
+

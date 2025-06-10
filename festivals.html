@@ -3,46 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Festivals</title>
+  <title data-uk="Фестивалі" data-en="Festivals">Фестивалі</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .btn.small {
+      background: #ff0055;
+      color: #fff;
+      border: none;
+      padding: 0.3rem 0.8rem;
+      margin-right: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .btn.small:hover {
+      background: #cc0044;
+    }
+
+    /* Language selector */
+    #langSelect {
+      margin-left: auto;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: none;
+      padding: 0.3rem;
+      border-radius: 4px;
+    }
+
+    .detail-page {
+      padding: 2rem;
+      background: rgba(0,0,0,0.6);
+      margin: 2rem auto;
+      border-radius: 10px;
+      max-width: 1200px;
+    }
+
+    .festival-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .festival-card {
+      display: flex;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .festival-card img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+    }
+    .festival-info {
+      padding: 1.5rem;
+      flex: 1;
+    }
+    .festival-info h2 {
+      margin-top: 0;
+    }
+    .festival-info .btn {
+      background: #ff0055;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+    .festival-info .btn:hover {
+      background: #cc0044;
+    }
+
+    .search-bar {
+      margin-left: auto;
+      position: relative;
+    }
+    .search-bar input {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+      width: 200px;
+    }
+
+    @media (max-width: 768px) {
+      .festival-card {
+        flex-direction: column;
+      }
+      .festival-card img {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="header-left">
-      <select id="langSelect">
-        <option value="uk">Українська</option>
-        <option value="en">English</option>
-      </select>
-    </div>
-    <div class="header-right">
-      <a href="register.html" class="btn small" data-uk="Реєстрація" data-en="Register">Реєстрація</a>
-      <a href="login.html" class="btn small" data-uk="Вхід" data-en="Login">Вхід</a>
-    </div>
+    <a href="index.html" class="btn small" data-uk="Головна" data-en="Home">Головна</a>
     <div class="search-bar">
-      <input type="text" id="festSearch" placeholder="Search festivals..." />
+      <input type="text" id="festSearch" placeholder="Search festivals...">
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html" data-uk="Головна" data-en="Home">Головна</a></li>
-        <li><a href="festivals.html" data-uk="Фестивалі" data-en="Festivals">Фестивалі</a></li>
-        <li><a href="bands.html" data-uk="Гурти" data-en="Bands">Гурти</a></li>
-        <li><a href="gallery.html" data-uk="Галерея" data-en="Gallery">Галерея</a></li>
-      </ul>
-    </nav>
+    <select id="langSelect">
+      <option value="uk">Українська</option>
+      <option value="en">English</option>
+    </select>
   </header>
 
-  <main>
+  <main class="detail-page">
     <h1 data-uk="Фестивалі" data-en="Festivals">Фестивалі</h1>
-
     <div class="festival-list">
       <div class="festival-card">
         <img src="images/mutant-rock-banner.jpg" alt="Mutant Rock Weekender">
         <div class="festival-info">
           <h2 data-uk="Mutant Rock Weekender" data-en="Mutant Rock Weekender">Mutant Rock Weekender</h2>
-          <p data-uk="Потужний рокабілі фестиваль із мутантними ритмами." data-en="A powerhouse rockabilly festival with mutant rhythms.">
-            Потужний рокабілі фестиваль із мутантними ритмами.
+          <p data-uk="Потужний рокабілі фестиваль із мутантними ритмами та зірковим лайнапом." data-en="A powerhouse rockabilly festival with mutant rhythms and a stellar lineup.">
+            Потужний рокабілі фестиваль із мутантними ритмами та зірковим лайнапом.
           </p>
-          <a href="festivals/mutant-rock.html" class="btn" data-uk="Докладніше" data-en="More">Докладніше</a>
+          <a href="festivals/mutant-rock-weekender.html" class="btn" data-uk="Докладніше" data-en="More">Докладніше</a>
         </div>
       </div>
 
@@ -50,10 +144,10 @@
         <img src="images/psychobillymeeting.jfif" alt="Psychobilly Meeting">
         <div class="festival-info">
           <h2 data-uk="Psychobilly Meeting" data-en="Psychobilly Meeting">Psychobilly Meeting</h2>
-          <p data-uk="Щорічна зустріч фанатів психобіллі." data-en="Annual gathering of psychobilly fans.">
-            Щорічна зустріч фанатів психобіллі.
+          <p data-uk="Щорічна зустріч фанатів психобіллі з усього світу." data-en="Annual gathering of psychobilly fans worldwide.">
+            Щорічна зустріч фанатів психобіллі з усього світу.
           </p>
-          <a href="festivals/psychobillymeeting.html" class="btn" data-uk="Докладніше" data-en="More">Докладніше</a>
+          <a href="festivals/psychobilly-meeting.html" class="btn" data-uk="Докладніше" data-en="More">Докладніше</a>
         </div>
       </div>
 
@@ -61,10 +155,10 @@
         <img src="images/rockinhell.jpg" alt="Rock in Hell">
         <div class="festival-info">
           <h2 data-uk="Rock in Hell" data-en="Rock in Hell">Rock in Hell</h2>
-          <p data-uk="Темний готик-панкабілі фест із пекельними ритмами." data-en="A dark gothic-punkabilly fest with hellish beats.">
-            Темний готик-панкабілі фест із пекельними ритмами.
+          <p data-uk="Темний готик-панкабілі фест із пекельними ритмами та унікальним лайнапом." data-en="A dark gothic-punkabilly fest with hellish beats and a unique lineup.">
+            Темний готик-панкабілі фест із пекельними ритмами та унікальним лайнапом.
           </p>
-          <a href="festivals/rockinhell.html" class="btn" data-uk="Докладніше" data-en="More">Докладніше</a>
+          <a href="festivals/rock-in-hell.html" class="btn" data-uk="Докладніше" data-en="More">Докладніше</a>
         </div>
       </div>
     </div>
@@ -81,10 +175,13 @@
       e.preventDefault();
       const q = this.value.toLowerCase();
       document.querySelectorAll('.festival-card').forEach(card => {
-        const txt = card.querySelector('h2').textContent.toLowerCase();
-        card.style.display = txt.includes(q) ? '' : 'none';
+        const title = card.querySelector('h2').textContent.toLowerCase();
+        card.style.display = title.includes(q) ? '' : 'none';
       });
     });
   </script>
 </body>
 </html>
+
+
+
