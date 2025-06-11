@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const track       = document.querySelector('.carousel-track');
-  const slides      = Array.from(track ? track.children : []);
-  const prevButton  = document.getElementById('prevBtn');
-  const nextButton  = document.getElementById('nextBtn');
-  let currentIndex  = 0;
+  const track      = document.querySelector('.carousel-track');
+  const slides     = Array.from(track ? track.children : []);
+  const prevButton = document.getElementById('prevBtn');
+  const nextButton = document.getElementById('nextBtn');
+  let currentIndex = 0;
 
   if (!track || slides.length === 0 || !prevButton || !nextButton) {
-    console.error('carousel.js: не знайдено потрібні елементи каруселі');
+    console.error('carousel.js: елементів немає');
     return;
   }
 
@@ -25,6 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   window.addEventListener('resize', updateCarousel);
-
   updateCarousel();
 });
