@@ -1,5 +1,5 @@
 const quotes = [
-  "Psychobilly isn’t just music — it’s a way of life with a twist of madness.",
+ "Psychobilly isn’t just music — it’s a way of life with a twist of madness.",
   "When the upright bass slaps, your heart starts beating the psychobilly rhythm.",
   "One foot in punk, the other in rockabilly — that’s the psychobilly walk.",
   "Leather jackets, skull tattoos and devilish riffs — welcome to psychobilly.",
@@ -11,12 +11,16 @@ const quotes = [
   "In psychobilly we trust — and in chaos we thrive."
 ];
 
-
 const btn     = document.getElementById('newQuoteBtn');
 const display = document.getElementById('quoteDisplay');
+
+if (!btn || !display) {
+  console.error('quotes.js: елемент newQuoteBtn або quoteDisplay не знайдено');
+}
 
 btn.addEventListener('click', () => {
   const idx = Math.floor(Math.random() * quotes.length);
   display.textContent = quotes[idx];
 });
-btn.click();
+
+if (btn) btn.click();
