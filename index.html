@@ -14,6 +14,9 @@
         <option value="en">English</option>
       </select>
     </div>
+    <div class="header-center">
+      <div id="clock"></div>
+    </div>
     <div class="header-right">
       <a href="register.html" class="btn small" data-uk="Реєстрація" data-en="Register">Реєстрація</a>
       <a href="login.html" class="btn small" data-uk="Вхід" data-en="Login">Вхід</a>
@@ -36,21 +39,23 @@
       <button id="prevBtn" class="carousel-btn">❮</button>
       <div class="carousel-track">
         <img src="images/new-realise1.jpg" alt="Slide 1" class="carousel-slide hover-zoom">
-        <img src="images/new-realise2.jpg" alt="Slide 2" class="carousel-slide hover-zoom">
-        <img src="images/new-realise3.jpg" alt="Slide 3" class="carousel-slide hover-zoom">
-        <img src="images/new-realise4.jpg" alt="Slide 4" class="carousel-slide hover-zoom">
-        <img src="images/new-realise5.jpg" alt="Slide 5" class="carousel-slide hover-zoom">
-        <img src="images/new-realise6.jpg" alt="Slide 6" class="carousel-slide hover-zoom">
-        <img src="images/new-realise7.jpg" alt="Slide 7" class="carousel-slide hover-zoom">
-        <img src="images/new-realise8.jpg" alt="Slide 8" class="carousel-slide hover-zoom">
-        <img src="images/new-realise9.jpg" alt="Slide 9" class="carousel-slide hover-zoom">
+
         <img src="images/new-realise10.jpg" alt="Slide 10" class="carousel-slide hover-zoom">
       </div>
       <button id="nextBtn" class="carousel-btn">❯</button>
     </div>
+
     <section class="quotes">
       <button id="newQuoteBtn" data-uk="Нова цитата" data-en="New Quote">Нова цитата</button>
       <p id="quoteDisplay"></p>
+    </section>
+
+    <section class="quiz" id="quizSection">
+      <h2 data-uk="Психобіллі Вікторина" data-en="Psychobilly Quiz">Психобіллі Вікторина</h2>
+      <div id="question"></div>
+      <div id="answers"></div>
+      <button id="nextQuestionBtn" data-uk="Наступне питання" data-en="Next Question">Наступне питання</button>
+      <p id="quizResult"></p>
     </section>
   </main>
 
@@ -58,10 +63,11 @@
     <p>&copy; 2025 Psychobilly Festival Portal</p>
   </footer>
 
-  <script src="css/js/lang.js"></script>
-  <script src="css/js/carousel.js"></script>
-  <script src="css/js/hover.js"></script>
-  <script src="css/js/calculator.js"></script>
-  <script src="css/js/quotes.js"></script>
+  <script src="js/lang.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/hover.js"></script>
+  <script src="js/quotes.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/clock.js"></script>
 </body>
 </html>

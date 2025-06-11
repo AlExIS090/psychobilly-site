@@ -299,4 +299,52 @@ footer {
 .hover-zoom:hover {
   transform: scale(1.1);
 }
+.quiz {
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+}
+.quiz h2 {
+  margin-bottom: 1rem;
+}
+.quiz button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ff0055;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.quiz button:hover {
+  background: #cc0044;
+}
+.quiz #answers button {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: #333;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.quiz #answers button:hover {
+  background: #444;
+}
 
+#clock {
+  color: #ffcc00;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+.header-center {
+  flex: 1;
+  text-align: center;
+}
