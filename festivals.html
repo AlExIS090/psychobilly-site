@@ -13,7 +13,37 @@
       background-size: cover;
       color: #fff;
     }
+.quote-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
 
+.quote-box h2 {
+  margin-bottom: 10px;
+}
+
+.quote-box p {
+  font-style: italic;
+  font-size: 1.2em;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.quote-box button {
+  padding: 8px 16px;
+  background-color: #ff0055;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quote-box button:hover {
+  background-color: #cc0044;
+}
     .site-header {
       display: flex;
       align-items: center;
@@ -58,6 +88,7 @@
       flex-direction: column;
       gap: 2rem;
     }
+
     .festival-card {
       display: flex;
       flex-wrap: wrap;
@@ -65,19 +96,23 @@
       border-radius: 12px;
       overflow: hidden;
     }
+
     .festival-card img {
       width: 100%;
       max-width: 400px;
       height: auto;
       object-fit: cover;
     }
+
     .festival-info {
       padding: 1.5rem;
       flex: 1;
     }
+
     .festival-info h2 {
       margin-top: 0;
     }
+
     .festival-info .btn {
       background: #ff0055;
       color: #fff;
@@ -88,6 +123,7 @@
       margin-top: 1rem;
       transition: background 0.3s;
     }
+
     .festival-info .btn:hover {
       background: #cc0044;
     }
@@ -96,11 +132,53 @@
       margin-left: auto;
       position: relative;
     }
+
     .search-bar input {
       padding: 0.5rem;
       border: none;
       border-radius: 4px;
       width: 200px;
+    }
+
+    .calculator {
+      background-color: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .calculator label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .calculator input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      background-color: #333;
+      border: 1px solid #555;
+      color: #fff;
+    }
+
+    .calculator button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #00ffcc;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .calculator button:hover {
+      background-color: #00ddaa;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #00ffcc;
     }
 
     @media (max-width: 768px) {
@@ -126,7 +204,13 @@
   </header>
 
   <main class="detail-page">
+    <div class="quote-box">
+  <h2>🎸 Випадкова сайкобіллі цитата</h2>
+  <p id="psychoQuote"></p>
+  <button onclick="showQuote()">Нова цитата</button>
+</div>
     <h1 data-uk="Фестивалі" data-en="Festivals">Фестивалі</h1>
+
     <div class="festival-list">
       <div class="festival-card">
         <img src="images/mutant-rock-banner.jpg" alt="Mutant Rock Weekender">
@@ -161,6 +245,24 @@
         </div>
       </div>
     </div>
+
+    <div class="calculator">
+      <h2>Калькулятор вартості поїздки</h2>
+      <label for="ticket">Ціна квитка (грн):</label>
+      <input type="number" id="ticket" placeholder="Напр. 1500">
+
+      <label for="accommodation">Ціна проживання за добу (грн):</label>
+      <input type="number" id="accommodation" placeholder="Напр. 800">
+
+      <label for="insurance">Ціна страхування (грн):</label>
+      <input type="number" id="insurance" placeholder="Напр. 300">
+
+      <label for="days">Кількість днів:</label>
+      <input type="number" id="days" placeholder="Напр. 3">
+
+      <button onclick="calculateTrip()">Розрахувати</button>
+      <div class="result" id="totalCost"></div>
+    </div>
   </main>
 
   <footer>
@@ -178,6 +280,34 @@
         card.style.display = title.includes(q) ? '' : 'none';
       });
     });
+
+    function calculateTrip() {
+      const ticket = parseFloat(document.getElementById('ticket').value) || 0;
+      const accommodation = parseFloat(document.getElementById('accommodation').value) || 0;
+      const insurance = parseFloat(document.getElementById('insurance').value) || 0;
+      const days = parseInt(document.getElementById('days').value) || 0;
+      const total = ticket + (accommodation * days) + insurance;
+      document.getElementById('totalCost').textContent = `Загальна вартість поїздки: ${total.toFixed(2)} грн`;
+    }
   </script>
+<script>
+  const psychoQuotes = [
+    "«Psychobilly isn’t just music — it’s a way of life with a twist of madness.»",
+    "«When the bass slaps like a zombie’s heart, you know it’s psychobilly.»",
+    "«One foot in punk, the other in hell — that’s the psychobilly walk.»",
+    "«Grease in the hair, tremor in the soul, psychobilly in the blood.»",
+    "«Psychobilly is rockabilly gone wild after midnight.»",
+    "«Keep it loud, keep it freaky — psychobilly never dies.»",
+    "«We don’t do pretty. We do psychobilly.»",
+    "«Psychobilly: for those who wear leather to the grave.»"
+  ];
+
+  function showQuote() {
+    const quote = psychoQuotes[Math.floor(Math.random() * psychoQuotes.length)];
+    document.getElementById('psychoQuote').textContent = quote;
+  }
+
+  document.addEventListener('DOMContentLoaded', showQuote);
+</script>
 </body>
 </html>
